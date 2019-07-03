@@ -2,7 +2,7 @@
 
 #symb_dir?=/scratch/safe/SymbiFlow/symbiflow-arch-defs
 #YOSYS=$(symb_dir)/build/env/conda/bin/yosys
-YOSYS=/scratch/safe/SymbiFlow/yosys/yosys
+#YOSYS=/scratch/safe/SymbiFlow/yosys/yosys
 symb_dir?=/users/andre/symbiflow/symbiflow-arch-defs
 YOSYS = /usr/local/bin/yosys
 
