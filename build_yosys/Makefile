@@ -24,7 +24,7 @@ base=$(abspath .)
 targets=$(notdir $(wildcard $(src)/*))
 targets:=$(filter-out flow_calc_1 flow_calc_2,$(targets))
 
-# flowc_calc_1 and flow_calc_2 require an IP that 
+# flowc_calc_1 and flow_calc_2 require an IP block from Xilinx that we do not have
 
 tmp_pref:=$(shell mktemp -u)
 
@@ -36,10 +36,6 @@ all: $(addsuffix /out.blif,$(targets))
 .SECONDARY: %.eblif $(targets:=/out.eblif) 
 
 $(targets): %: %/out.eblif
-#$(targets): %: %/out.net %/out.place %/out.route
-#$(targets): %: %/out.route
-#$(targets): %: %/out.eblif %/out.net %/out.place
-
 
 $(abspath $(targets)):
 	@ mkdir $@
