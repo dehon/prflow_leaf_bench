@@ -64,8 +64,7 @@ $(foreach d,$(wildcard $(src)/*/*.v),$(notdir $(patsubst %/,%,$(dir $d)))/$(notd
 
 $(targets:=/out.eblif): %/out.eblif: $$(addprefix %/,$$(notdir $$(wildcard $(src)/%/*.dat))) $$(addprefix %/,$$(notdir $$(wildcard $(src)/%/*.v))) | $$(abspath %)
 	@ echo $*
-# temporary
-#	cp $(XPM_MEMORY_TDPRAM) $*/
+	cp $(XPM_MEMORY_TDPRAM) $*/
 	- cd $* && OUT_EBLIF=out.pre_eblif \
 	OUT_SYNTH_V=synth.vout \
 	$(YOSYS) -E .deps -p "tcl ../synth.tcl" -l $(*).log *.v 
