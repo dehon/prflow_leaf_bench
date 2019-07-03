@@ -30,7 +30,7 @@ tmp_pref:=$(shell mktemp -u)
 
 export symb_dir
 
-all: $(addsuffix /out.blif,$(targets)) 
+all: $(addsuffix /out.eblif,$(targets)) 
 
 .PRECIOUS: %.eblif  $(targets:=/out.eblif) 
 .SECONDARY: %.eblif $(targets:=/out.eblif) 
